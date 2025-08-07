@@ -1,6 +1,3 @@
-# actually centre the camera ?
-
-
 
 
 extends Node3D
@@ -13,6 +10,7 @@ var cube_s = 1.5
 var grid = []
 
 func _ready() -> void:
+	
 	
 # maing the level grid of cubes
 	for x in range(grid_s):
@@ -45,12 +43,25 @@ func _unhandled_input(event: InputEvent) -> void:
 			if result.collider.has_method("on_cube_clicked"):
 				result.collider.on_cube_clicked()
 
-#╰(*°▽°*)╯works now, the problem - ray was hitting staticbody3d and the on cube clicked logic was on other node
-# this works for some reason??? after adding the player ??
-# on cube clicked does not work tho
+func _camera_move():
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		pass;
+
+func _player_move_to(t_pos: Vector3):
+	var jump_h = 1.0
+	var jump_time = 0.5
+
+	var start_pos = player.global_position
+	var end_pos = t_pos
+
+	var tween = get_tree().create_tween()
+	tween.tween_property(player,"global_position",end_pos +Vector3(0, jump_h,0), jump_time * 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.tween_property(player,"global_position",end_pos, jump_time * 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 
 
-
+	
+	
+	
 func _process(delta: float) -> void:
 	pass

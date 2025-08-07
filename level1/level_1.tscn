@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr4n4nughfg7e"]
+[gd_scene load_steps=4 format=3 uid="uid://cr4n4nughfg7e"]
 
 [ext_resource type="Script" uid="uid://bv4xs0fq31tjn" path="res://level1/level_1.gd" id="1_h77vs"]
 [ext_resource type="PackedScene" uid="uid://dlafiypyrnpni" path="res://player/player.tscn" id="3_4hwfk"]
 [ext_resource type="PackedScene" uid="uid://d2l1fokd3e37h" path="res://cube/box.tscn" id="4_gpbvg"]
-[ext_resource type="Script" uid="uid://qjap7pd6svug" path="res://player/player.gd" id="4_v8of2"]
 
 [node name="level1" type="Node3D"]
 script = ExtResource("1_h77vs")
@@ -12,10 +11,10 @@ script = ExtResource("1_h77vs")
 transform = Transform3D(1, 0, 0, 0, 0.664305, 0.747462, 0, -0.747462, 0.664305, 0, 1.6887, 0)
 
 [node name="player" parent="." instance=ExtResource("3_4hwfk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-script = ExtResource("4_v8of2")
+transform = Transform3D(0.419991, 0, 0.907528, 0, 1, 0, -0.907528, 0, 0.419991, 0, 2, 0)
 
 [node name="box" parent="." instance=ExtResource("4_gpbvg")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.461114, 0.887341, 0, -0.887341, 0.461114, 3.0361, 4.93198, 6.15074)
+transform = Transform3D(1, 0, 0, 0, 0.644871, 0.764291, 0, -0.764291, 0.644871, 3.0983, 5.09461, 8.02505)
+fov = 68.2

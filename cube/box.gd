@@ -1,7 +1,7 @@
-# box.gd
 extends StaticBody3D
 
-var grid_pos: Vector2i  # Declare this to avoid assignment errors
+var grid_pos: Vector2i  # already set in the main script
 
 func on_cube_clicked():
-	print(" Cube clicked at: ", grid_pos)
+	var main = get_tree().get_current_scene()
+	main.move_player_to(position)
